@@ -95,8 +95,8 @@ get_system_inputs() {
 
 prepare_packages() {
     echo -e "${CLR_BLUE}Installing packages...${CLR_RESET}"
-    echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" | tee /etc/apt/sources.list.d/pve.list
-    curl -o /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg
+    echo "deb http://download.proxmox.com/debian/pve trixie pve-no-subscription" | tee /etc/apt/sources.list.d/pve.list
+    curl -o /etc/apt/trusted.gpg.d/proxmox-release-trixie.gpg https://enterprise.proxmox.com/debian/proxmox-release-trixie.gpg
     apt clean && apt update && apt install -yq proxmox-auto-install-assistant xorriso ovmf wget sshpass
 
     echo -e "${CLR_GREEN}Packages installed.${CLR_RESET}"
